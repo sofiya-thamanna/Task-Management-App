@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #282c34;
+}
+
+/* Background Video */
+.video_backgrounds {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+/* Dark overlay to improve readability */
+.video_backgrounds::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+    z-index: -1;
+}
+
+/* Main Content Box */
+.hero {
+    width: 100%;
+    max-width: 540px;
+    background: rgba(255, 255, 255, 0.15); /* Glass effect */
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px 30px 70px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Heading (To-Do List) */
+.content h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b); /* Beautiful gradient */
+    border-radius: 10px;
+    color: white;
+    padding: 8px 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(255, 75, 75, 0.5); /* Soft glow effect */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Stylish border */
+}
+
+/* Icon next to Heading */
+.content h3 img {
+    width: 35px;
+    margin-left: 8px;
+}
+
+
+/* To-Do Input Row */
+.row {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 12px;
+    font-size: 16px;
+}
+
+/* Add Button */
+button {
+    border: none;
+    outline: none;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    padding: 14px 45px;
+    border-radius: 40px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect on button */
+button:hover {
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    box-shadow: 0 4px 10px rgba(255, 75, 75, 0.5);
+}
+
+/* To-Do List Styling */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px 8px 12px 50px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-align: left;  /* Align text to the left */
+}
+
+
+/* Hover effect */
+ul li:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Checkbox Icons */
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-image: url('./assets/unchecked.png');
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 10px;
+}
+
+/* Checked Items */
+.checked {
+    color:#282c34;
+    text-decoration: line-through;
+}
+
+/* Change the checkbox to a checked icon */
+.checked::before {
+    background-image: url('./assets/checked.png');
+}
+
+ul li span {
+/* Delete Button */
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    border-radius: 50%;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Delete Hover Effect */
+ul li span:hover {
+    background: rgba(255, 0, 0, 0.2);
+    color: red;
+}
